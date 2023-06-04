@@ -1,18 +1,16 @@
 import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Home from "./components/Home";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import AddTournament from "./components/AddTournament";
-import { AntDesign, FontAwesome } from "@expo/vector-icons";
 import { Provider } from "react-native-paper";
 import { theme } from "./components/core/theme";
 import RegisterScreen from "./components/screens/RegisterScreen";
 import StartScreen from "./components/screens/StartScreen";
 import LoginScreen from "./components/screens/LoginScreen";
 import Description from "./components/Description";
-
 
 const Stack = createStackNavigator();
 
