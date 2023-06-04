@@ -6,23 +6,20 @@ import Logo from '../LoginComponents/Logo'
 import Header from '../LoginComponents/Header'
 import Button from '../LoginComponents/Button'
 import TextInput from '../LoginComponents/TextInput'
-import BackButton from '../LoginComponents/BackButton'
 import { theme } from '../core/theme'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
-import { logIn } from '../State/FirebaseFunctions'
 import userAtom from "../State/Store";
-import { useAtom } from "jotai";
+import {  useSetAtom } from "jotai";
 import {
   getAuth,
-  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
-  const [user, setUser] = useAtom(userAtom);
+  const setUser = useSetAtom(userAtom);
   const [error, setError] = useState(null);
 
 

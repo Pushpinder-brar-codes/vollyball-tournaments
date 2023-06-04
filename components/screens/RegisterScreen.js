@@ -6,11 +6,9 @@ import Logo from "../LoginComponents/Logo";
 import Header from "../LoginComponents/Header";
 import Button from "../LoginComponents/Button";
 import TextInput from "../LoginComponents/TextInput";
-import BackButton from "../LoginComponents/BackButton";
 import { theme } from "../core/theme";
 import { emailValidator } from "../helpers/emailValidator";
 import { passwordValidator } from "../helpers/passwordValidator";
-import { createUser } from "../State/FirebaseFunctions";
 import userAtom from "../State/Store";
 import { useAtom } from "jotai";
 import {
@@ -26,7 +24,6 @@ export default function RegisterScreen({ navigation }) {
   const [error, setError] = useState(null);
 
   const onSignUpPressed = () => {
-    // const nameError = nameValidator(name.value)
     const emailError = emailValidator(email.value);
     const passwordError = passwordValidator(password.value);
     if (emailError || passwordError) {
